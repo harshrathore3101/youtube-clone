@@ -3,7 +3,6 @@ import VideoCard from "./VideoCard";
 import ChannelCard from "./ChannelCard";
 
 const Videos = ({ videos }) => {
-  // console.log(videos);
    if (!videos?.length) return <div> load</div>;
   return (
     <Stack
