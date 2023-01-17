@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { Typography, Box, Stack } from "@mui/material";
 import { cheakCircle, CheckCircle } from "@mui/icons-material";
-
 import Videos from "./Videos";
 import { fetchFromAPI } from "../utils/fetchAPI";
 
@@ -30,10 +29,10 @@ const VideoDetail = () => {
   } = videoDetail;
 
   return (
-    <Box minHeight="95vh">
+    <Box minHeight="94vh">
       <Stack direction={{ xs: "column", md: "row" }}>
         <Box flex={1}>
-          <Box sx={{ width: "100%", position: "sticky", top: "86px" }}>
+          <Box sx={{ width: "100%", position: "sticky", top: "78px" }}>
             <ReactPlayer
               className="react-player"
               controls
@@ -60,7 +59,7 @@ const VideoDetail = () => {
                   />
                 </Typography>
               </Link>
-              <Stack direction='row' gap='20px' alignItems='center'>
+              <Stack direction="row" gap="20px" alignItems="center">
                 <Typography variant="body1" sx={{ opacity: "0.7" }}>
                   {parseInt(viewCount).toLocaleString()} views
                 </Typography>
@@ -71,10 +70,15 @@ const VideoDetail = () => {
             </Stack>
           </Box>
         </Box>
+        <Box
+          px={2}
+          py={{ md: 1, xs: 5 }}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Videos videos={videos} direction="column" />
+        </Box>
       </Stack>
-      <Box px={2} py={{md:1,xs:5}} justifyContent="center" alignItems="center">
-        <Videos videos={videos} direction='column'/>
-      </Box>
     </Box>
   );
 };

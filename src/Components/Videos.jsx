@@ -3,7 +3,7 @@ import VideoCard from "./VideoCard";
 import ChannelCard from "./ChannelCard";
 
 const Videos = ({ videos, direction }) => {
-  if (!videos?.length) return <div> load</div>;
+  if (!videos?.length) return 'Loading';
   return (
     <Stack
       direction={direction || "row"}
